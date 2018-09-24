@@ -307,7 +307,6 @@ function createReducer<M, L>(structure: Structure<M, L>) {
       } else if (payload !== undefined) {
         result = setIn(result, `values.${field}`, payload)
       }
-      result = deleteInWithCleanUp(result, `asyncErrors.${field}`)
       if (!persistentSubmitErrors) {
         result = deleteInWithCleanUp(result, `submitErrors.${field}`)
       }
